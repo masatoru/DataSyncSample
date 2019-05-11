@@ -1,7 +1,8 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Data;
 namespace DataSyncSample
 {
     public partial class App : Application
@@ -15,7 +16,8 @@ namespace DataSyncSample
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            AppCenter.Start("ios={Your Xamarin iOS App Secret};android={Your Xamarin Android App secret}",
+                typeof(Data));
         }
 
         protected override void OnSleep()
